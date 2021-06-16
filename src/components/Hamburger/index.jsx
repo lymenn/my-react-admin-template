@@ -1,23 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { toggleSettingPanel } from "@/store/actions";
+import { toggleSiderBar } from "@/store/actions";
 import { Layout, Icon } from "antd";
 const Hamburger = (props) => {
-  const { toggleSettingPanel, sidebarCollapsed } = props;
+    const { toggleSiderBar, sidebarCollapsed } = props;
 
-  return (
-    <Icon
-      className="trigger"
-      type={sidebarCollapsed ? "menu-unfold" : "menu-fold"}
-      onClick={toggleSettingPanel}
-    />
-  );
+    return (
+        <Icon
+            className="trigger"
+            type={sidebarCollapsed ? "menu-unfold" : "menu-fold"}
+            onClick={toggleSiderBar}
+        />
+    );
 };
 
 export default connect(
-  (state) => {
-    return state.app;
-  },
-  { toggleSettingPanel }
+    (state) => {
+        return state.app;
+    },
+    { toggleSiderBar }
 )(Hamburger);
